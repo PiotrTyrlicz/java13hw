@@ -12,10 +12,14 @@ public class Message extends HttpServlet {
         String tekst = request.getParameter("text");
         response.getWriter().println("Twój tekst: "+tekst);
 
-        Informacje info1=new Informacje(tekst);
-        response.getWriter().println(info1.pokazInformacje());
+        //Informacje info1=new Informacje(tekst);
+        //response.getWriter().println(info1.pokazInformacje());
 
-
+        Informacje info1=new Informacje();
+        response.getWriter().println("Ilosc znakow: "+info1.liczbaZnakow(tekst));
+        response.getWriter().println("Ilosc znakow bez spacji: "+info1.liczbaZnakowBezSpacji(tekst));
+        response.getWriter().println("Ilosc wyrazow1: "+info1.liczbaWyrazow(tekst) + "!");
+        response.getWriter().println("Czy palindrom: "+info1.czyPalindrom(tekst));
 
 
     }
