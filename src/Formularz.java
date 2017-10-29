@@ -17,8 +17,11 @@ public class Formularz extends HttpServlet {
             double metry = Double.parseDouble(metryS);
 
             Konwerter konwerter1 = new Konwerter();
-            String wynik=konwerter1.konwertuj(metry,kilogramy);
-            response.getWriter().println(wynik);
+            response.getWriter().println(kilogramy+"kg to "+konwerter1.kgTogram(kilogramy)+"g");
+            response.getWriter().println(metry + "m to " +konwerter1.metryNaCentymetry(metry) + "cm");
+
+
+
 
         }catch (NumberFormatException e){
             response.getWriter().println("Blad, nie podales liczby");
